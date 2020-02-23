@@ -10,6 +10,7 @@ public class Caguano extends Carro {
 	//Constructores
 	
 	public Caguano() {
+		super();
 		this.alcanceDeTiro = 0;
 		this.colorConfeti = "";
 	}

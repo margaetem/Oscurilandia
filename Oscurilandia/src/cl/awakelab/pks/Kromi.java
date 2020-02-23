@@ -4,30 +4,31 @@ public class Kromi extends Carro {
 	
 	//Atributos de la clase hija Kromi
 	
-	private String añoFabricacion;
+	private String anoFabricacion;
 	private String marca;
 
 	//Constructores
 	
 	public Kromi() {
-		this.añoFabricacion = "";
+		super();
+		this.anoFabricacion = "";
 		this.marca = "";
 	}
 	
-	public Kromi(String añoFabricacion, String marca) {
+	public Kromi(String anoFabricacion, String marca) {
 		super();
-		this.añoFabricacion = añoFabricacion;
+		this.anoFabricacion = anoFabricacion;
 		this.marca = marca;
 	}
 	
 	//Getters and Setters
 
-	public String getAñoFabricacion() {
-		return añoFabricacion;
+	public String getAnoFabricacion() {
+		return anoFabricacion;
 	}
 
-	public void setAñoFabricacion(String añoFabricacion) {
-		this.añoFabricacion = añoFabricacion;
+	public void setAnoFabricacion(String anoFabricacion) {
+		this.anoFabricacion = anoFabricacion;
 	}
 
 	public String getMarca() {
@@ -42,7 +43,7 @@ public class Kromi extends Carro {
 
 	@Override
 	public String toString() {
-		return "Kromi [añoFabricacion=" + añoFabricacion + ", marca=" + marca + "]";
+		return "Kromi [anoFabricacion=" + anoFabricacion + ", marca=" + marca + "]";
 	}
 	
 	

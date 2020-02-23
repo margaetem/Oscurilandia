@@ -13,6 +13,7 @@ public class Trupalla extends Carro {
 	//Constructores
 	
 	public Trupalla() {
+		super();
 		this.nivelArmadura = 0;
 		this.nombrePks = "";
 	}
