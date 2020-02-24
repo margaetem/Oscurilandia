@@ -38,13 +38,18 @@ public class Kromi extends Carro {
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
+	@Override
+	public String toString() {
+		return "Carro [cantidadOcupantes=" + super.getCantidadOcupantes() + ", fechaIngreso=" + super.getFechaIngreso() + ", ubicacionFila="
+				+ super.getUbicacionFila() + ", ubicacionColumna=" + super.getUbicacionColumna()+ ", añoFabricacion " + anoFabricacion
+				+ ", Marca " + marca + "]";
+	}
+	
+	
 	
 	//toString
 
-	@Override
-	public String toString() {
-		return "Kromi [anoFabricacion=" + anoFabricacion + ", marca=" + marca + "]";
-	}
+
 	
 	
 	
