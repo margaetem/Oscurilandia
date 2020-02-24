@@ -40,6 +40,48 @@ public class Ejecutable {
 		c1.mostrarMatriz();
 		
 		System.out.println("");
+		
+		
+		c1.crearTrupalla();
+		c1.mostrarMatriz();
+		System.out.println("");
+		
+		c1.crearTrupalla();
+		c1.mostrarMatriz();
+		System.out.println("");
+		
+		c1.crearTrupalla();
+		c1.mostrarMatriz();
+		System.out.println("");
+		
+		c1.crearTrupalla();
+		c1.mostrarMatriz();
+		System.out.println("");
+		
+		c1.crearTrupalla();
+		c1.mostrarMatriz();
+		System.out.println("");
+		
+		c1.crearTrupalla();
+		c1.mostrarMatriz();
+		System.out.println("");
+		
+		c1.crearTrupalla();
+		c1.mostrarMatriz();
+		System.out.println("");
+		
+		c1.crearTrupalla();
+		c1.mostrarMatriz();
+		System.out.println("");
+		
+		c1.crearTrupalla();
+		c1.mostrarMatriz();
+		System.out.println("");
+		
+		c1.crearTrupalla();
+		c1.mostrarMatriz();
+		System.out.println("");
+		
 	}
 
 }

@@ -78,8 +78,10 @@ public class Tablero {
     	if (fila > 12) {
     		flag = 1;
 		} else {
-			for (int i = fila; i < fila + 2; i++) {
-				if (tablero [fila][columna].) {
+			for (int i = 0; i < 3; i++) {
+			
+				System.out.println(tablero[fila + i][columna]);
+				if (tablero [fila + i][columna] != null) {
 					
 					flag++;
 					System.out.println(flag);
@@ -106,11 +108,13 @@ public class Tablero {
     	if (columna > 13) {
     		flag = 1;
 		} else {
-			for (int i = columna; i < columna + 1; i++) {
+			for (int i = 0; i < 2; i++) {
 				System.out.println("p");
-				if (tablero [fila][columna] != null) {
+				System.out.println(tablero[fila][columna]);
+				System.out.println(fila + " " + columna );
+				if (tablero [fila][columna + i ] != null) {
+					
 					flag++;
-					System.out.println(flag);
 				} 
 			}
 			
@@ -119,6 +123,26 @@ public class Tablero {
     	
 			tablero[fila][columna] = "C"; 
 			tablero[fila][columna+1] = "C"; 
+		
+    }
+    public void crearTrupalla() {
+    	Carro c1;
+    	int fila; 
+    	int columna;
+    	int flag ;
+    	do {
+    		c1 = new Trupalla(); 
+    		fila = c1.getUbicacionFila();
+        	columna = c1.getUbicacionColumna();
+    		flag = 0;	
+    	
+    		if (tablero [fila][columna] != null) {
+				flag++;
+			} 
+    	} while (flag > 0);	
+    	
+			tablero[fila][columna] = "T"; 
+			
 		
     }
     
