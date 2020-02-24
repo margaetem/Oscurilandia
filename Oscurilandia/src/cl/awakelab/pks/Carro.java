@@ -12,14 +12,12 @@ public class Carro {
 	public Carro() {
 		this.cantidadOcupantes = 0;
 		this.fechaIngreso = "";
-		Random rnd = new Random();
 		this.ubicacionFila =(int)Math.floor(Math.random()*15);
 		this.ubicacionColumna = (int)Math.floor(Math.random()*15);
 	}
 	public Carro(int cantidadOcupantes, String fechaIngreso) {
 		this.cantidadOcupantes = cantidadOcupantes;
 		this.fechaIngreso = fechaIngreso;
-		Random rnd = new Random();
 		this.ubicacionFila =(int)Math.floor(Math.random()*15);
 		this.ubicacionColumna = (int)Math.floor(Math.random()*15);
 		
