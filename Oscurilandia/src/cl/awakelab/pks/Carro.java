@@ -10,8 +10,8 @@ public class Carro {
 	
 	// Contructores
 	public Carro() {
-		this.cantidadOcupantes = 0;
-		this.fechaIngreso = "";
+		this.cantidadOcupantes = 4;
+		this.fechaIngreso = "1997";
 		this.ubicacionFila =(int)Math.floor(Math.random()*15);
 		this.ubicacionColumna = (int)Math.floor(Math.random()*15);
 	}

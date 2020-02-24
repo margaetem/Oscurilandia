@@ -63,6 +63,9 @@ public class Tablero {
     	for (int i = 0; i < CANTIDAD_CAGUANOS; i++) {
 			crearCaguano();
 		}
+    	for (int i = 0; i < CANTIDAD_TRUPALLAS; i++) {
+			crearTrupalla();
+		}
     	
     }
     public void crearKromi() {
@@ -94,6 +97,7 @@ public class Tablero {
 			tablero[fila][columna] = "K"; 
 			tablero[fila+1][columna] = "K"; 
 			tablero[fila+2][columna] = "K"; 
+			
     }
     public void crearCaguano() {
     	Carro c1;
@@ -123,6 +127,7 @@ public class Tablero {
     	
 			tablero[fila][columna] = "C"; 
 			tablero[fila][columna+1] = "C"; 
+			
 		
     }
     public void crearTrupalla() {
@@ -143,7 +148,6 @@ public class Tablero {
     	
 			tablero[fila][columna] = "T"; 
 			
-		
     }
     
     

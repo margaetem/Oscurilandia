@@ -11,8 +11,8 @@ public class Kromi extends Carro {
 	
 	public Kromi() {
 		super();
-		this.anoFabricacion = "";
-		this.marca = "";
+		this.anoFabricacion = "1990";
+		this.marca = "prro";
 	}
 	
 	public Kromi(String anoFabricacion, String marca) {

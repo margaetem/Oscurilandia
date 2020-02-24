@@ -82,6 +82,7 @@ public class Ejecutable {
 		c1.mostrarMatriz();
 		System.out.println("");
 		
+		System.out.println(c1.getCarros());
 	}
 
 }
