@@ -42,9 +42,10 @@ public class Trupalla extends Carro {
 	
 	@Override
 	public String toString() {
-		return "Trupalla [nivelArmadura=" + nivelArmadura + ", nombrePks=" + nombrePks + "]";
+		return "Trupalla [cantidadOcupantes=" + super.getCantidadOcupantes() + ", fechaIngreso=" + super.getFechaIngreso() + ", ubicacionFila="
+				+ super.getUbicacionFila() + ", ubicacionColumna=" + super.getUbicacionColumna()+ ", nivelArmadura " + nivelArmadura
+				+ ", nombrePks " + nombrePks + "]";
 	}
-	
 	
 	
 }
