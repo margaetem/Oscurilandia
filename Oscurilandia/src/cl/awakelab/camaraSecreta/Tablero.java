@@ -1,8 +1,11 @@
 package cl.awakelab.camaraSecreta;
 
-import java.awt.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+//<<<<<<< HEAD
+//=======
+//import java.util.InputMismatchException;
+//>>>>>>> branch 'master' of https://github.com/margaetem/Oscurilandia
 import java.util.Scanner;
 
 import cl.awakelab.pks.*;
@@ -159,6 +162,35 @@ public class Tablero {
 		carros.add(c1);
 
 	}
+	
+//	public void lanzarHuevo() {
+//		Huevo h1 = new Huevo();
+//		int fila;
+//		int columna;
+//		
+//		Scanner entrada = new Scanner (System.in);
+//		try {
+//			System.out.println("Ingresa el nº de fila (entre 0 y 14)");
+//			fila = entrada.nextInt();
+//			h1.setFilaObjetivo(fila);
+//		} catch (InputMismatchException again) {
+//			System.out.println("Solo puedes ingresar números entre 0 y 14");
+//		} finally {
+//			
+//		}
+//		
+//		try {
+//			System.out.println("Ingresa el nº de columna (entre 0 y 14)");
+//			columna = entrada.nextInt();
+//			h1.setColumnaObjetivo(columna);
+//		} catch (InputMismatchException again) {
+//			System.out.println("Solo puedes ingresar números entre 0 y 14");
+//		} finally {
+//			
+//		}
+//		
+//		
+//	}
 
 	public void mostrarMatriz() {
 		for (int i = 0; i < tablero.length; i++) {
