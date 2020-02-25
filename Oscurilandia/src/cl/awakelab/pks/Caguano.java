@@ -1,18 +1,20 @@
 package cl.awakelab.pks;
 
+import cl.awakelab.funciones.RandomPksQls;
+
 public class Caguano extends Carro {
 	
 	//Atributos de la clase hija Caguano
 	
 	private int alcanceDeTiro;
 	private String colorConfeti;
-	
+	RandomPksQls rnd = new RandomPksQls();
 	//Constructores
 	
 	public Caguano() {
 		super();
-		this.alcanceDeTiro = 0;
-		this.colorConfeti = "";
+		this.alcanceDeTiro = (int)(Math.random() * 15);
+		this.colorConfeti = rnd.getColor();
 	}
 	
 

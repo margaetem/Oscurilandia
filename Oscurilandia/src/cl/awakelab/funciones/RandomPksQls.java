@@ -54,4 +54,29 @@ public class RandomPksQls {
     private void generarNombre() {
         this.nombre = NOMBRES [(int) (Math.random() * NOMBRES.length)];
     }
+    public String getAno() {
+        return ano;
+    }
+    public void setAno(String ano) {
+        this.ano = ano;
+    }
+    public String getMarca() {
+        return marca;
+    }
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+    public String getColor() {
+        return color;
+    }
+    public void setColor(String color) {
+        this.color = color;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
 }

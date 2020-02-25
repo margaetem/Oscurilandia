@@ -1,5 +1,7 @@
 package cl.awakelab.pks;
 
+import cl.awakelab.funciones.RandomPksQls;
+
 public class Trupalla extends Carro {
 
 	//Atributos de la clase hija Trupalla
@@ -9,13 +11,13 @@ public class Trupalla extends Carro {
 	
 	private int nivelArmadura;
 	private String nombrePks;
-	
+	RandomPksQls rnd = new RandomPksQls();
 	//Constructores
 	
 	public Trupalla() {
 		super();
-		this.nivelArmadura = 0;
-		this.nombrePks = "";
+		this.nivelArmadura =(int)(Math.random() * 5 + 1); ;
+		this.nombrePks = rnd.getNombre();
 	}
 	public Trupalla(int nivelArmadura, String nombrePks) {
 		super();
