@@ -91,6 +91,7 @@ public class Ejecutable {
 		c1.mostrarMatriz();
 		c1.lanzarHuevo();
 		c1.mostrarMatriz();
+		System.out.println("Tu puntaje total es de: " + c1.calcularPuntaje());
 	}
 
 }
