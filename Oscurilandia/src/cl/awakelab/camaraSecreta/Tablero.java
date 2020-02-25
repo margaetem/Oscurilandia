@@ -2,6 +2,7 @@ package cl.awakelab.camaraSecreta;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.InputMismatchException;
 //<<<<<<< HEAD
 //=======
 //import java.util.InputMismatchException;
@@ -17,6 +18,8 @@ public class Tablero {
     public final static int CANTIDAD_KROMIS = 3;
     public final static int CANTIDAD_CAGUANOS = 5;
     public final static int CANTIDAD_TRUPALLAS = 10;
+    public final static String LIMITE_SUPERIOR = "INGRESA UN NUMERO ENTRE 0 Y 14";
+    public final static String LIMITE_INFERIOR = "INGRESA UN NUMERO ENTRE 0 Y 14";
 
     // atributos
     private ArrayList<Carro> carros = new ArrayList<Carro>();
@@ -163,34 +166,41 @@ public class Tablero {
 
     }
 
-    //	public void lanzarHuevo() {
-    //		Huevo h1 = new Huevo();
-    //		int fila;
-    //		int columna;
-    //		
-    //		Scanner entrada = new Scanner (System.in);
-    //		try {
-    //			System.out.println("Ingresa el nº de fila (entre 0 y 14)");
-    //			fila = entrada.nextInt();
-    //			h1.setFilaObjetivo(fila);
-    //		} catch (InputMismatchException again) {
-    //			System.out.println("Solo puedes ingresar números entre 0 y 14");
-    //		} finally {
-    //			
-    //		}
-    //		
-    //		try {
-    //			System.out.println("Ingresa el nº de columna (entre 0 y 14)");
-    //			columna = entrada.nextInt();
-    //			h1.setColumnaObjetivo(columna);
-    //		} catch (InputMismatchException again) {
-    //			System.out.println("Solo puedes ingresar números entre 0 y 14");
-    //		} finally {
-    //			
-    //		}
-    //		
-    //		
-    //	}
+    public static int pedirCoordenadas(Scanner entrada) {
+//	int num = -1;
+//	Scanner sc =new Scanner(System.in);
+		
+//		try {
+//			do {
+//			num = leer("Ingresa el nº de columna (entre 0 y 14)");
+//			System.out.println("Se ha ingresado exitosamente");
+//			} while (num <= 0 || num >= 14);
+//				
+//		} catch (InputMismatchException again) {
+//			System.out.println("Ingresa un numero paco perkin: \n" + again.getMessage());
+//				//num = leer("Ingresa el nº de columna (entre 0 y 14)");
+//			sc.next();
+//			num = leer("Ingresa el nº de columna (entre 0 y 14)");
+//			
+//			}
+    	while (!entrada.hasNextInt()) {
+			System.err.print(LIMITE_INFERIOR + ": ");
+			entrada.next();
+		}
+    	return entrada.nextInt();
+	}
+    	
+    	public void escribir (String mensaje) {
+    		System.out.println(mensaje);
+    	}
+    	
+    	public int leer (String mensaje) {
+    		escribir(mensaje);
+    		Scanner entrada = new Scanner(System.in);
+    		return entrada.nextInt();
+    	}
+    	
+    	
 
     public void mostrarMatriz() {
         for (int i = 0; i < tablero.length; i++) {
@@ -207,6 +217,8 @@ public class Tablero {
     }
 
     public void lanzarHuevo() {
+    	
+    		
         Huevo h1 = new Huevo();
         Scanner entrada = new Scanner(System.in);
         System.out.println("Ingrese la fila a la que desea apuntar (entero entre 0 y 14)");
