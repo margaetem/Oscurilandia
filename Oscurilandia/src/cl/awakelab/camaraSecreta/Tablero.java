@@ -3,6 +3,7 @@ package cl.awakelab.camaraSecreta;
 import java.awt.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 import cl.awakelab.pks.*;
 import cl.awakelab.firstLine.*;
@@ -59,7 +60,7 @@ public class Tablero {
 	@Override
 	public String toString() {
 		return "Tablero [carros=" + carros + ", lanzamientos=" + lanzamientos + ", tablero=" + Arrays.toString(tablero)
-		+ "]";
+				+ "]";
 	}
 
 	// Metodos
@@ -85,18 +86,18 @@ public class Tablero {
 			c1 = new Kromi();
 			fila = c1.getUbicacionFila();
 			columna = c1.getUbicacionColumna();
-			carros.add(c1);
+		
 			flag = 0;
 			if (fila > 12) {
 				flag = 1;
 			} else {
 				for (int i = 0; i < 3; i++) {
 
-					//System.out.println(tablero[fila + i][columna]);
+					// System.out.println(tablero[fila + i][columna]);
 					if (tablero[fila + i][columna] != null) {
 
 						flag++;
-						//System.out.println(flag);
+						// System.out.println(flag);
 					}
 				}
 
@@ -124,11 +125,7 @@ public class Tablero {
 				flag = 1;
 			} else {
 				for (int i = 0; i < 2; i++) {
-				//	System.out.println("p");
-				//	System.out.println(tablero[fila][columna]);
-				//	System.out.println(fila + " " + columna);
 					if (tablero[fila][columna + i] != null) {
-
 						flag++;
 					}
 				}
@@ -175,6 +172,80 @@ public class Tablero {
 
 			System.out.println("");
 		}
+	}
+
+	public void lanzarHuevo() {
+		Huevo h1 = new Huevo();
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("Ingrese la fila a la que desea apuntar (entero entre 0 y 14)");
+		int filaObjetivo = entrada.nextInt();
+		h1.setFilaObjetivo(filaObjetivo);
+		System.out.println("Ingrese la columna a la que desea apuntar (entero entre 0 y 14)");
+		int columnaObjetivo = entrada.nextInt();
+		h1.setColumnaObjetivo(columnaObjetivo);
+
+		if (tablero[filaObjetivo][columnaObjetivo] == null) {
+			h1.setPuntajeObtenido(0);
+			tablero[filaObjetivo][columnaObjetivo] = "H";
+		} else {
+
+			int ubicacionColumnaCarro;
+			int ubicacionFilaCarro;
+
+			switch (tablero[filaObjetivo][columnaObjetivo]) {
+			case "K":
+				h1.setPuntajeObtenido(3);
+				tablero[filaObjetivo][columnaObjetivo] = "H";
+
+				for (int i = 0; i < 3; i++) {
+
+					ubicacionColumnaCarro = carros.get(i).getUbicacionColumna();
+					ubicacionFilaCarro = carros.get(i).getUbicacionFila();
+					System.out.println(" ");
+					System.out.println(ubicacionColumnaCarro);
+					System.out.println(ubicacionFilaCarro);
+					if (columnaObjetivo == ubicacionColumnaCarro) {
+						if (filaObjetivo == ubicacionFilaCarro || filaObjetivo == (ubicacionFilaCarro + 1)
+								|| filaObjetivo == (ubicacionFilaCarro + 2)) {
+							if (tablero[ubicacionFilaCarro][ubicacionColumnaCarro] == "H"
+									&& tablero[ubicacionFilaCarro + 1][ubicacionColumnaCarro] == "H"
+									&& tablero[ubicacionFilaCarro + 2][ubicacionColumnaCarro] == "H") {
+								h1.setPuntajeObtenido(13);
+							}
+						}
+					}
+				}
+				break;
+			case "C":
+				h1.setPuntajeObtenido(2);
+				tablero[filaObjetivo][columnaObjetivo] = "H";
+
+				for (int i = 3; i < 8; i++) {
+
+					ubicacionColumnaCarro = carros.get(i).getUbicacionColumna();
+					ubicacionFilaCarro = carros.get(i).getUbicacionFila();
+
+					if (filaObjetivo == ubicacionFilaCarro) {
+						if (columnaObjetivo == ubicacionColumnaCarro || columnaObjetivo == ubicacionColumnaCarro + 1) {
+							if (tablero[ubicacionFilaCarro][ubicacionColumnaCarro] == "H"
+									&& tablero[ubicacionFilaCarro][ubicacionColumnaCarro + 1] == "H") {
+								h1.setPuntajeObtenido(9);
+							}
+						}
+					}
+				}
+				break;
+			case "T":
+				h1.setPuntajeObtenido(1);
+				tablero[filaObjetivo][columnaObjetivo] = "H";
+				break;
+			case "H":
+				h1.setPuntajeObtenido(0);
+				tablero[filaObjetivo][columnaObjetivo] = "H";
+				break;
+			}
+		}
+		System.out.println(h1.toString());
 	}
 
 }

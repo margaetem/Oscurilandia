@@ -84,7 +84,13 @@ public class Ejecutable {
 		
 		c1.crearCarro();
 		c1.mostrarMatriz();
-		System.out.println(c1.getCarros());
+//		System.out.println(c1.getCarros());		
+		c1.lanzarHuevo();
+		c1.mostrarMatriz();
+		c1.lanzarHuevo();
+		c1.mostrarMatriz();
+		c1.lanzarHuevo();
+		c1.mostrarMatriz();
 	}
 
 }
