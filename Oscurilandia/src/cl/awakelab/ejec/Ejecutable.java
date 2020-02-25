@@ -7,81 +7,83 @@ public class Ejecutable {
 	public static void main(String[] args) {
 		Tablero c1 = new Tablero(); 
 		
-		c1.crearKromi();
+//		c1.crearKromi();
+//		c1.mostrarMatriz();
+//		
+//		System.out.println("");
+//		c1.crearKromi();
+//		c1.mostrarMatriz();
+//		
+//		System.out.println("");
+//		c1.crearKromi();
+//		c1.mostrarMatriz();
+//		
+//		System.out.println("");
+//		
+//		c1.crearCaguano();
+//		c1.mostrarMatriz();
+//		
+//		System.out.println("");
+//		c1.crearCaguano();
+//		c1.mostrarMatriz();
+//		
+//		System.out.println("");
+//		c1.crearCaguano();
+//		c1.mostrarMatriz();
+//		
+//		System.out.println("");
+//		c1.crearCaguano();
+//		c1.mostrarMatriz();
+//		
+//		System.out.println("");
+//		c1.crearCaguano();
+//		c1.mostrarMatriz();
+//		
+//		System.out.println("");
+//		
+//		
+//		c1.crearTrupalla();
+//		c1.mostrarMatriz();
+//		System.out.println("");
+//		
+//		c1.crearTrupalla();
+//		c1.mostrarMatriz();
+//		System.out.println("");
+//		
+//		c1.crearTrupalla();
+//		c1.mostrarMatriz();
+//		System.out.println("");
+//		
+//		c1.crearTrupalla();
+//		c1.mostrarMatriz();
+//		System.out.println("");
+//		
+//		c1.crearTrupalla();
+//		c1.mostrarMatriz();
+//		System.out.println("");
+//		
+//		c1.crearTrupalla();
+//		c1.mostrarMatriz();
+//		System.out.println("");
+//		
+//		c1.crearTrupalla();
+//		c1.mostrarMatriz();
+//		System.out.println("");
+//		
+//		c1.crearTrupalla();
+//		c1.mostrarMatriz();
+//		System.out.println("");
+//		
+//		c1.crearTrupalla();
+//		c1.mostrarMatriz();
+//		System.out.println("");
+//		
+//		c1.crearTrupalla();
+//		c1.mostrarMatriz();
+//		System.out.println("");
+		
+		c1.crearCarro();
 		c1.mostrarMatriz();
-		
-		System.out.println("");
-		c1.crearKromi();
-		c1.mostrarMatriz();
-		
-		System.out.println("");
-		c1.crearKromi();
-		c1.mostrarMatriz();
-		
-		System.out.println("");
-		
-		c1.crearCaguano();
-		c1.mostrarMatriz();
-		
-		System.out.println("");
-		c1.crearCaguano();
-		c1.mostrarMatriz();
-		
-		System.out.println("");
-		c1.crearCaguano();
-		c1.mostrarMatriz();
-		
-		System.out.println("");
-		c1.crearCaguano();
-		c1.mostrarMatriz();
-		
-		System.out.println("");
-		c1.crearCaguano();
-		c1.mostrarMatriz();
-		
-		System.out.println("");
-		
-		
-		c1.crearTrupalla();
-		c1.mostrarMatriz();
-		System.out.println("");
-		
-		c1.crearTrupalla();
-		c1.mostrarMatriz();
-		System.out.println("");
-		
-		c1.crearTrupalla();
-		c1.mostrarMatriz();
-		System.out.println("");
-		
-		c1.crearTrupalla();
-		c1.mostrarMatriz();
-		System.out.println("");
-		
-		c1.crearTrupalla();
-		c1.mostrarMatriz();
-		System.out.println("");
-		
-		c1.crearTrupalla();
-		c1.mostrarMatriz();
-		System.out.println("");
-		
-		c1.crearTrupalla();
-		c1.mostrarMatriz();
-		System.out.println("");
-		
-		c1.crearTrupalla();
-		c1.mostrarMatriz();
-		System.out.println("");
-		
-		c1.crearTrupalla();
-		c1.mostrarMatriz();
-		System.out.println("");
-		
-		c1.crearTrupalla();
-		c1.mostrarMatriz();
-		System.out.println("");
-		
 		System.out.println(c1.getCarros());
 	}
 
