@@ -18,8 +18,10 @@ public class Tablero {
     public final static int CANTIDAD_KROMIS = 3;
     public final static int CANTIDAD_CAGUANOS = 5;
     public final static int CANTIDAD_TRUPALLAS = 10;
-    public final static String LIMITE_SUPERIOR = "INGRESA UN NUMERO ENTRE 0 Y 14";
-    public final static String LIMITE_INFERIOR = "INGRESA UN NUMERO ENTRE 0 Y 14";
+    public final static String LIMITE_VALIDO = "Ingresa un numero perkin";
+    public final static String ENTERO_BETWEEN = "Ingresa un numero entre %d y %d";
+    
+
 
     // atributos
     private ArrayList<Carro> carros = new ArrayList<Carro>();
@@ -166,40 +168,31 @@ public class Tablero {
 
     }
 
-    public static int pedirCoordenadas(Scanner entrada) {
-//	int num = -1;
-//	Scanner sc =new Scanner(System.in);
-		
-//		try {
-//			do {
-//			num = leer("Ingresa el nº de columna (entre 0 y 14)");
-//			System.out.println("Se ha ingresado exitosamente");
-//			} while (num <= 0 || num >= 14);
-//				
-//		} catch (InputMismatchException again) {
-//			System.out.println("Ingresa un numero paco perkin: \n" + again.getMessage());
-//				//num = leer("Ingresa el nº de columna (entre 0 y 14)");
-//			sc.next();
-//			num = leer("Ingresa el nº de columna (entre 0 y 14)");
-//			
-//			}
+    public static int pedirEntero(Scanner entrada) {
+    		
     	while (!entrada.hasNextInt()) {
-			System.err.print(LIMITE_INFERIOR + ": ");
+			System.err.print(LIMITE_VALIDO + ": ");
 			entrada.next();
 		}
     	return entrada.nextInt();
 	}
+     
+    public static int pedirEntero(Scanner scanner, int limiteInferior, int limiteSuperior) {
+        int entero;
+        do {
+            entero = pedirEntero(scanner);
+            if(scanner.hasNextLine())
+                scanner.nextLine();
+            if(entero < limiteInferior || entero > limiteSuperior)
+                System.err.print(String.format(ENTERO_BETWEEN, limiteInferior, limiteSuperior));
+        } while(entero < limiteInferior || entero > limiteSuperior);
+        return entero;
+    }
     	
-    	public void escribir (String mensaje) {
+    	public static void escribir (String mensaje) {
     		System.out.println(mensaje);
     	}
-    	
-    	public int leer (String mensaje) {
-    		escribir(mensaje);
-    		Scanner entrada = new Scanner(System.in);
-    		return entrada.nextInt();
-    	}
-    	
+    
     	
 
     public void mostrarMatriz() {
@@ -220,12 +213,12 @@ public class Tablero {
     	
     		
         Huevo h1 = new Huevo();
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("Ingrese la fila a la que desea apuntar (entero entre 0 y 14)");
-        int filaObjetivo = entrada.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        escribir("Ingrese la fila a la que desea apuntar (entero entre 0 y 14)");
+        int filaObjetivo = pedirEntero(scanner, 0, 14);
         h1.setFilaObjetivo(filaObjetivo);
-        System.out.println("Ingrese la columna a la que desea apuntar (entero entre 0 y 14)");
-        int columnaObjetivo = entrada.nextInt();
+       escribir("Ingrese la columna a la que desea apuntar (entero entre 0 y 14)");
+        int columnaObjetivo = pedirEntero(scanner, 0, 14);
         h1.setColumnaObjetivo(columnaObjetivo);
         lanzamientos.add(h1);
 
@@ -246,9 +239,9 @@ public class Tablero {
 
                     ubicacionColumnaCarro = carros.get(i).getUbicacionColumna();
                     ubicacionFilaCarro = carros.get(i).getUbicacionFila();
-                    System.out.println(" ");
-                    System.out.println(ubicacionColumnaCarro);
-                    System.out.println(ubicacionFilaCarro);
+//                    System.out.println(" ");
+//                    System.out.println(ubicacionColumnaCarro);
+//                    System.out.println(ubicacionFilaCarro);
                     if (columnaObjetivo == ubicacionColumnaCarro) {
                         if (filaObjetivo == ubicacionFilaCarro || filaObjetivo == (ubicacionFilaCarro + 1)
                                 || filaObjetivo == (ubicacionFilaCarro + 2)) {
@@ -290,7 +283,8 @@ public class Tablero {
                 break;
             }
         }
-        System.out.println(h1.toString());
+//        System.out.println(h1.toString());
+//        scanner.close();
     }
 
     public int calcularPuntaje() {
