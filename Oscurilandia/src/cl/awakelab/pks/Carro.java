@@ -2,7 +2,7 @@ package cl.awakelab.pks;
 
 import cl.awakelab.funciones.RandomPksQls;
 
-public class Carro {
+public abstract class Carro {
 	
 	//Estos son los atributos de la clase padre
 	private int cantidadOcupantes;
@@ -56,8 +56,8 @@ public class Carro {
 	
 	@Override
 	public String toString() {
-		return "Carro [cantidadOcupantes=" + cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + ", ubicacionFila="
-				+ ubicacionFila + ", ubicacionColumna=" + ubicacionColumna + "]";
+		return "Carro [cantidadOcupantes: " + cantidadOcupantes + ", fechaIngreso: " + fechaIngreso + ", ubicacionFila: "
+				+ ubicacionFila + ", ubicacionColumna: " + ubicacionColumna + "]";
 	}
 	
 	// Métodos

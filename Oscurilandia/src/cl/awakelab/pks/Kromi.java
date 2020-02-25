@@ -42,9 +42,9 @@ public class Kromi extends Carro {
 	}
 	@Override
 	public String toString() {
-		return "Kromi [cantidadOcupantes=" + super.getCantidadOcupantes() + ", fechaIngreso=" + super.getFechaIngreso() + ", ubicacionFila="
-				+ super.getUbicacionFila() + ", ubicacionColumna=" + super.getUbicacionColumna()+ ", añoFabricacion " + anoFabricacion
-				+ ", Marca " + marca + "]";
+		return "Kromi [cantidadOcupantes: " + super.getCantidadOcupantes() + ", fechaIngreso: " + super.getFechaIngreso() + ", ubicacionFila: "
+				+ super.getUbicacionFila() + ", ubicacionColumna:" + super.getUbicacionColumna()+ ", añoFabricacion: " + anoFabricacion
+				+ ", Marca: " + marca + "]";
 	}
 	
 	

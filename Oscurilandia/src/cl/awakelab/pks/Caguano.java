@@ -49,9 +49,9 @@ public class Caguano extends Carro {
 
 	@Override
 	public String toString() {
-		return "Caguano [cantidadOcupantes=" + super.getCantidadOcupantes() + ", fechaIngreso=" + super.getFechaIngreso() + ", ubicacionFila="
-				+ super.getUbicacionFila() + ", ubicacionColumna=" + super.getUbicacionColumna()+ ", alcandeDeTiro " + alcanceDeTiro
-				+ ", colorConfeti " + colorConfeti + "]";
+		return "Caguano [cantidadOcupantes:" + super.getCantidadOcupantes() + ", fechaIngreso:" + super.getFechaIngreso() + ", ubicacionFila:"
+				+ super.getUbicacionFila() + ", ubicacionColumna:" + super.getUbicacionColumna()+ ", alcandeDeTiro: " + alcanceDeTiro
+				+ ", colorConfeti: " + colorConfeti + "]";
 	}
 	
 	

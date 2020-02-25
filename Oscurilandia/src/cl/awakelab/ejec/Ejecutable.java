@@ -1,7 +1,9 @@
 package cl.awakelab.ejec;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import cl.awakelab.camaraSecreta.*;
+import cl.awakelab.pks.Carro;
 
 public class Ejecutable {
 	
@@ -11,10 +13,9 @@ public class Ejecutable {
 		Tablero.escribir("¡FirstLine necesita de tu ayuda!");
 		Tablero.escribir("1.- Crear Matriz");
 		Tablero.escribir("2.- Lanzar Huevo");
-		Tablero.escribir("3.- Calcular puntaje");
-		Tablero.escribir("4.- Mostrar matriz");
-		Tablero.escribir("5.- Mostrar datos PKS");
-		Tablero.escribir("6.- Salir");
+		Tablero.escribir("3.- Calcular puntaje y Mostrar matriz");
+		Tablero.escribir("4.- Mostrar datos PKS");
+		Tablero.escribir("5.- Salir");
 		
 	}
 
@@ -25,19 +26,25 @@ public class Ejecutable {
 		
 		while(true) {
 			menu();
-			int op = Tablero.pedirEntero(scanner, 1, 6);
+			int op = Tablero.pedirEntero(scanner, 1, 5);
 			System.out.println();
 			if (op == 1)
 				app.crearCarro();
 			else if (op == 2)
 				app.lanzarHuevo();
-			else if (op == 3)
-				Tablero.escribir("Su puntaje es: " + app.calcularPuntaje());
-			else if (op == 4)
+			else if (op == 3) {
 				app.mostrarMatriz();
-			else if (op == 5)
-				Tablero.escribir("Los datos de los carros son: " + app.getCarros());
-			else
+				Tablero.escribir("Su puntaje es: " + app.calcularPuntaje());
+			}	
+			else if (op == 4) {
+				ArrayList <Carro> carros = app.getCarros();
+				for (Carro carro : carros) {
+					Tablero.escribir(carro.toString());
+				}
+				
+			}
+				
+			else 
 				break;
 		}
 	}
