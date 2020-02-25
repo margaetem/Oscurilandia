@@ -1,5 +1,7 @@
 package cl.awakelab.pks;
 
+import cl.awakelab.funciones.RandomPksQls;
+
 public class Carro {
 	
 	//Estos son los atributos de la clase padre
@@ -7,11 +9,12 @@ public class Carro {
 	private String fechaIngreso;
 	private int ubicacionFila;
 	private int ubicacionColumna;
+	RandomPksQls rnd = new RandomPksQls();
 	
 	// Contructores
 	public Carro() {
-		this.cantidadOcupantes = 4;
-		this.fechaIngreso = "1997";
+		this.cantidadOcupantes = (int)(Math.random() * 20 + 1);
+		this.fechaIngreso = rnd.getAno();
 		this.ubicacionFila =(int)Math.floor(Math.random()*15);
 		this.ubicacionColumna = (int)Math.floor(Math.random()*15);
 	}

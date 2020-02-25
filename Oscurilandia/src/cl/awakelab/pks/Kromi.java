@@ -1,18 +1,20 @@
 package cl.awakelab.pks;
-
+import cl.awakelab.funciones.*;
 public class Kromi extends Carro {
 	
 	//Atributos de la clase hija Kromi
 	
 	private String anoFabricacion;
 	private String marca;
+	
+	RandomPksQls rnd = new RandomPksQls();
 
 	//Constructores
 	
 	public Kromi() {
 		super();
-		this.anoFabricacion = "1990";
-		this.marca = "prro";
+		this.anoFabricacion = rnd.getAno();
+		this.marca = rnd.getMarca();
 	}
 	
 	public Kromi(String anoFabricacion, String marca) {
