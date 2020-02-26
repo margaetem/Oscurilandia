@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import cl.awakelab.pks.*;
+import cl.awakelab.firstLine.*;
 
 public class PruebasUnitarias {
 	/**
@@ -182,10 +183,12 @@ public class PruebasUnitarias {
 
 		// se generan todos los carros de pks
 		t1.crearCarro();
+		Huevo h1;
 		// t1.crearCaguano();
 		// t1.crearTrupalla();
 		// como la generacion es aleatoria se obtienen las coordenadas de la primera kromi y se
 		// muestran por pantalla para setearlas
+			
 		System.out.println("ingrese la siguiente fila a continuacion:" + t1.getCarros().get(0).getUbicacionFila());
 		System.out
 				.println("ingrese la siguiente columna a continuacion:" + t1.getCarros().get(0).getUbicacionColumna());
