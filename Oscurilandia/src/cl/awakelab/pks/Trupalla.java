@@ -1,7 +1,11 @@
 package cl.awakelab.pks;
 
 import cl.awakelab.funciones.RandomPksQls;
-
+/**
+ * En esta clase se definen los atributos de Trupalla.
+ * @author Trinidad Gaete, Manuel Lillo, Alexis Ruiz.
+ *
+ */
 public class Trupalla extends Carro {
 
 	//Atributos de la clase hija Trupalla

@@ -1,5 +1,10 @@
 package cl.awakelab.pks;
 import cl.awakelab.funciones.*;
+/**
+ * En esta clase se definen los atributos de Kromi
+ * @author Trinidad Gaete, Manuel Lillo, Alexis Ruiz.
+ *
+ */
 public class Kromi extends Carro {
 	
 	//Atributos de la clase hija Kromi
