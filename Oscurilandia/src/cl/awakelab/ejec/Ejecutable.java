@@ -13,7 +13,7 @@ public class Ejecutable {
 		Tablero.escribir("¡FirstLine necesita de tu ayuda!");
 		Tablero.escribir("1.- Crear Matriz");
 		Tablero.escribir("2.- Lanzar Huevo");
-		Tablero.escribir("3.- Calcular puntaje y Mostrar matriz");
+		Tablero.escribir("3.- Calcular puntaje y Mostrar matriz completa");
 		Tablero.escribir("4.- Mostrar datos PKS");
 		Tablero.escribir("5.- Salir");
 		
@@ -23,18 +23,23 @@ public class Ejecutable {
 			
 	Scanner scanner = new Scanner (System.in);
 	Tablero app = new Tablero(); 
-		
+		int contadorLanzamientos = 0;
 		while(true) {
 			menu();
-			int op = Tablero.pedirEntero(scanner, 1, 5);
+			int op = Tablero.pedirEntero(scanner, 1, 6);
 			System.out.println();
 			if (op == 1)
 				app.crearCarro();
-			else if (op == 2)
+			else if (op == 2) {
+				
 				app.lanzarHuevo();
+			   app.mostrarMatriz(false);
+			   Tablero.escribir("Su puntaje es: " + app.calcularPuntaje(contadorLanzamientos));
+			   contadorLanzamientos++;
+			}
 			else if (op == 3) {
-				app.mostrarMatriz();
-				Tablero.escribir("Su puntaje es: " + app.calcularPuntaje());
+				app.mostrarMatriz(true);
+				Tablero.escribir("Su puntaje es: " + app.calcularPuntajeTotal());
 			}	
 			else if (op == 4) {
 				ArrayList <Carro> carros = app.getCarros();
