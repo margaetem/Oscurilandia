@@ -186,9 +186,10 @@ public class PruebasUnitarias {
 		Huevo h1;
 		// t1.crearCaguano();
 		// t1.crearTrupalla();
-		// como la generacion es aleatoria se obtienen las coordenadas de la primera kromi y se
+		// como la generacion es aleatoria se obtienen las coordenadas de la primera
+		// kromi y se
 		// muestran por pantalla para setearlas
-			
+
 		System.out.println("ingrese la siguiente fila a continuacion:" + t1.getCarros().get(0).getUbicacionFila());
 		System.out
 				.println("ingrese la siguiente columna a continuacion:" + t1.getCarros().get(0).getUbicacionColumna());
@@ -196,7 +197,8 @@ public class PruebasUnitarias {
 		// se evalua que el puntaje por darle a la kromi sea efectivamente 3.
 		assertEquals(3, t1.getLanzamientos().get(0).getPuntajeObtenido());
 
-		// como la generacion es aleatoria se obtienen las coordenadas del primer caguano y se
+		// como la generacion es aleatoria se obtienen las coordenadas del primer
+		// caguano y se
 		// muestran por pantalla para setearlas
 		System.out.println("ingrese la siguiente fila a continuacion:" + t1.getCarros().get(3).getUbicacionFila());
 		System.out
@@ -205,7 +207,8 @@ public class PruebasUnitarias {
 		// se evalua que el puntaje por darle al caguano sea efectivamente 2.
 		assertEquals(2, t1.getLanzamientos().get(1).getPuntajeObtenido());
 
-		// como la generacion es aleatoria se obtienen las coordenadas del primera trupalla y se
+		// como la generacion es aleatoria se obtienen las coordenadas del primera
+		// trupalla y se
 		// muestran por pantalla para setearlas
 		System.out.println("ingrese la siguiente fila a continuacion:" + t1.getCarros().get(8).getUbicacionFila());
 		System.out
@@ -213,20 +216,27 @@ public class PruebasUnitarias {
 		t1.lanzarHuevo();
 		// se evalua que el puntaje por darle al trupalla sea efectivamente 1.
 		assertEquals(1, t1.getLanzamientos().get(2).getPuntajeObtenido());
-		
-		// se valida que al darle a una kromi completa asigne 13 puntos, se buscan las dos coordenadas restantes de la primera kromi
-		System.out.println("ingrese la siguiente fila a continuacion:" + (t1.getCarros().get(0).getUbicacionFila()+1));
-		System.out.println("ingrese la siguiente columna a continuacion:" + t1.getCarros().get(0).getUbicacionColumna());
+
+		// se valida que al darle a una kromi completa asigne 13 puntos, se buscan las
+		// dos coordenadas restantes de la primera kromi
+		System.out
+				.println("ingrese la siguiente fila a continuacion:" + (t1.getCarros().get(0).getUbicacionFila() + 1));
+		System.out
+				.println("ingrese la siguiente columna a continuacion:" + t1.getCarros().get(0).getUbicacionColumna());
 		t1.lanzarHuevo();
-		System.out.println("ingrese la siguiente fila a continuacion:" + (t1.getCarros().get(0).getUbicacionFila()+2));
-		System.out.println("ingrese la siguiente columna a continuacion:" + t1.getCarros().get(0).getUbicacionColumna());
+		System.out
+				.println("ingrese la siguiente fila a continuacion:" + (t1.getCarros().get(0).getUbicacionFila() + 2));
+		System.out
+				.println("ingrese la siguiente columna a continuacion:" + t1.getCarros().get(0).getUbicacionColumna());
 		t1.lanzarHuevo();
 		// al darle a la tercera celda de la kromi el resultado debe ser 13
 		assertEquals(13, t1.getLanzamientos().get(4).getPuntajeObtenido());
-		
-		// se valida que al darle a un caguano complet asigne 10 puntos, se busca la coordenada restantes del primer caguano
+
+		// se valida que al darle a un caguano complet asigne 10 puntos, se busca la
+		// coordenada restantes del primer caguano
 		System.out.println("ingrese la siguiente fila a continuacion:" + t1.getCarros().get(3).getUbicacionFila());
-		System.out.println("ingrese la siguiente columna a continuacion:" + (t1.getCarros().get(3).getUbicacionColumna()+1));
+		System.out.println(
+				"ingrese la siguiente columna a continuacion:" + (t1.getCarros().get(3).getUbicacionColumna() + 1));
 		t1.lanzarHuevo();
 		// al darle a la segunda celda del caguano el resultado debe ser 9
 		assertEquals(9, t1.getLanzamientos().get(5).getPuntajeObtenido());

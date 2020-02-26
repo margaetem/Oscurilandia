@@ -5,13 +5,15 @@ import java.util.Scanner;
 
 import cl.awakelab.camaraSecreta.*;
 import cl.awakelab.pks.Carro;
+
 /**
  * Esta clase se utiliza para ejecutar el promgrama.
+ * 
  * @author Trinidad Gaete, Manuel Lillo, Alexis Ruiz.
  *
  */
 public class Ejecutable {
-    
+
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
@@ -27,8 +29,10 @@ public class Ejecutable {
 			break;
 		}
 	}
+
 	/**
-	 * Este metodo se utiliza para darle la bienvenida al jugador y lo intruduce al juego	 
+	 * Este metodo se utiliza para darle la bienvenida al jugador y lo intruduce al
+	 * juego
 	 * 
 	 */
 	static void menu() {
@@ -39,6 +43,7 @@ public class Ejecutable {
 				+ " los que protegen la entrada del lugar. \n");
 		Tablero.escribir("Debemos evitar que se salgan con la suya!!! \n");
 	}
+
 	/**
 	 * Da una explicacion de la mision y le pregunta al usuario si acepta la mision.
 	 */
@@ -60,44 +65,46 @@ public class Ejecutable {
 			break;
 		}
 	}
+
 	/**
-	 * instancia la clase tablero, crea todos los carros 
-	 * tambien explica los puntajes y ejecuta el menu.
+	 * instancia la clase tablero, crea todos los carros tambien explica los
+	 * puntajes y ejecuta el menu.
 	 */
 	static void crearMatriz() {
-            Tablero app = new Tablero();
-            app.crearCarro();
-            Scanner scanner = new Scanner(System.in);
-            int contadorLanzamientos = 0;
-            Tablero.escribir("\nEstás en el campo de batalla junto a los FirstLine\n");
-            Tablero.escribir("El puntaje se asigna así:\n" + 
-                            "Si le achuntas a una Kromi(K) tienes 3pts por casilla.\n" + 
-                            "Tendrás 10pts adicionales si te la piteas entera(Ocupa 3 casillas verticales)\n" + 
-                            "Si le achuntas a un Caguano(C) tienes 2pts por casilla.\n" + 
-                            "Tendrás 7pts adicionales si te la piteas (Ocupa 2 casillas horizontales)\n" + 
-                            "Si le achuntas a una Trupalla(T) tienes 1pt.\n");
-            while (true) {
-                    repeatMenu();
-                    Tablero.escribir("Escoge lo que quieres hacer.");
-                    int op = Tablero.pedirEntero(scanner, 1, 4);
-                    System.out.println();
-                    if (op == 1) {
-                            app.lanzarHuevo();
-                            app.mostrarMatriz(false);
-                            Tablero.escribir("Su puntaje es: " + app.mostrarPuntaje(contadorLanzamientos));
-                            contadorLanzamientos++;
-                    } else if (op == 2) {
-                            app.mostrarMatriz(true);
-                            Tablero.escribir("Su puntaje es: " + app.mostrarPuntajeTotal());
-                    } else if (op == 3) {
-                            ArrayList<Carro> carros = app.getCarros();
-                            for (Carro carro : carros) {
-                                    Tablero.escribir(carro.toString());
-                            }
-                    } else
-                            break;
-            }
-    }
+		Tablero app = new Tablero();
+		app.crearCarro();
+		Scanner scanner = new Scanner(System.in);
+		int contadorLanzamientos = 0;
+		Tablero.escribir("\nEstás en el campo de batalla junto a los FirstLine\n");
+		Tablero.escribir("El puntaje se asigna así:\n" + "Si le achuntas a una Kromi(K) tienes 3pts por casilla.\n"
+				+ "Tendrás 10pts adicionales si te la piteas entera(Ocupa 3 casillas verticales)\n"
+				+ "Si le achuntas a un Caguano(C) tienes 2pts por casilla.\n"
+				+ "Tendrás 7pts adicionales si te la piteas (Ocupa 2 casillas horizontales)\n"
+				+ "Si le achuntas a una Trupalla(T) tienes 1pt.\n");
+		while (true) {
+			repeatMenu();
+			Tablero.escribir("Escoge lo que quieres hacer.");
+			int op = Tablero.pedirEntero(scanner, 1, 4);
+			System.out.println();
+			if (op == 1) {
+				app.lanzarHuevo();
+				app.mostrarMatriz(false);
+				Tablero.escribir("Su puntaje es: " + app.mostrarPuntaje(contadorLanzamientos));
+				contadorLanzamientos++;
+			} else if (op == 2) {
+				app.mostrarMatriz(true);
+				Tablero.escribir("Su puntaje es: " + app.mostrarPuntajeTotal());
+			} else if (op == 3) {
+				ArrayList<Carro> carros = app.getCarros();
+				for (Carro carro : carros) {
+					Tablero.escribir(carro.toString());
+				}
+			} else
+
+				break;
+		}
+		Tablero.escribir("Gracias por jugar!");
+	}
 
 	/**
 	 * muestra el menu al usuario.
@@ -105,7 +112,7 @@ public class Ejecutable {
 	static void repeatMenu() {
 		Tablero.escribir("Opciones:");
 		Tablero.escribir("1.- Lanzar Huevo");
-		Tablero.escribir("2.- Calcular puntaje y Mostrar matriz completa");
+		Tablero.escribir("2.- Calcular puntaje acumulado y Mostrar matriz con carros y huevos");
 		Tablero.escribir("3.- Mostrar datos PKS");
 		Tablero.escribir("4.- Salir\n");
 	}
