@@ -34,12 +34,12 @@ public class Ejecutable {
 				
 				app.lanzarHuevo();
 			   app.mostrarMatriz(false);
-			   Tablero.escribir("Su puntaje es: " + app.calcularPuntaje(contadorLanzamientos));
+			   Tablero.escribir("Su puntaje es: " + app.mostrarPuntaje(contadorLanzamientos));
 			   contadorLanzamientos++;
 			}
 			else if (op == 3) {
 				app.mostrarMatriz(true);
-				Tablero.escribir("Su puntaje es: " + app.calcularPuntajeTotal());
+				Tablero.escribir("Su puntaje es: " + app.mostrarPuntajeTotal());
 			}	
 			else if (op == 4) {
 				ArrayList <Carro> carros = app.getCarros();

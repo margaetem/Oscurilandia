@@ -1,5 +1,5 @@
 package cl.awakelab.firstLine;
-
+import cl.awakelab.camaraSecreta.*;
 public class Huevo {
 	private int filaObjetivo;
 	private int columnaObjetivo;
@@ -12,6 +12,7 @@ public class Huevo {
 	this.puntajeObtenido = 0;
 	}
 	public Huevo (int filaObjetivo, int columnaObjetivo, int puntajeObtenido ) {
+		Tablero t1 = new Tablero();
 	this.filaObjetivo = filaObjetivo;
 	this.columnaObjetivo = columnaObjetivo;
 	this.puntajeObtenido = puntajeObtenido;
@@ -33,15 +34,15 @@ public class Huevo {
 	public void setColumnaObjetivo(int columnaObjetivo) {
 		this.columnaObjetivo = columnaObjetivo;
 	}
+	
+	
 
 	public int getPuntajeObtenido() {
 		return puntajeObtenido;
 	}
-
 	public void setPuntajeObtenido(int puntajeObtenido) {
 		this.puntajeObtenido = puntajeObtenido;
 	}
-
 	// ToString
 	@Override
 	public String toString() {
