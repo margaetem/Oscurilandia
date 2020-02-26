@@ -26,7 +26,7 @@ public class Tablero {
     // atributos
     private ArrayList<Carro> carros = new ArrayList<Carro>();
     private ArrayList<Huevo> lanzamientos = new ArrayList<Huevo>();
-    private String[][] tablero = new String[15][15];
+    protected String[][] tablero = new String[15][15];
 
     // constructores
     public Tablero() {
@@ -238,7 +238,11 @@ public class Tablero {
         int columnaObjetivo = pedirEntero(scanner, 0, 14);
         h1.setColumnaObjetivo(columnaObjetivo);
         lanzamientos.add(h1);
-
+        calcularPuntaje(filaObjetivo, columnaObjetivo, h1);
+    }
+    
+    private void calcularPuntaje(int filaObjetivo, int columnaObjetivo, Huevo h1) {
+    	
         if (tablero[filaObjetivo][columnaObjetivo] == null) {
             h1.setPuntajeObtenido(0);
             tablero[filaObjetivo][columnaObjetivo] = "H";
@@ -256,9 +260,6 @@ public class Tablero {
 
                     ubicacionColumnaCarro = carros.get(i).getUbicacionColumna();
                     ubicacionFilaCarro = carros.get(i).getUbicacionFila();
-//                    System.out.println(" ");
-//                    System.out.println(ubicacionColumnaCarro);
-//                    System.out.println(ubicacionFilaCarro);
                     if (columnaObjetivo == ubicacionColumnaCarro) {
                         if (filaObjetivo == ubicacionFilaCarro || filaObjetivo == (ubicacionFilaCarro + 1)
                                 || filaObjetivo == (ubicacionFilaCarro + 2)) {
@@ -300,11 +301,9 @@ public class Tablero {
                 break;
             }
         }
-//        System.out.println(h1.toString());
-//        scanner.close();
     }
 
-    public int calcularPuntajeTotal() {
+    public int mostrarPuntajeTotal() {
         
         int contador = 0;
         for (int i = 0; i < lanzamientos.size(); i++) {
@@ -315,7 +314,7 @@ public class Tablero {
 
     }
     
-   public int calcularPuntaje(int contador) {
+   public int mostrarPuntaje(int contador) {
         
 	   int puntaje;
         puntaje = lanzamientos.get(contador).getPuntajeObtenido();     
