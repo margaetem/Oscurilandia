@@ -11,9 +11,13 @@ import java.util.Scanner;
 
 import cl.awakelab.pks.*;
 import cl.awakelab.firstLine.*;
-
+/**
+ * En la clase tablero se crea la matriz y se ubican cada uno de los carros, los
+ * lanzamientos y el puntaje obtenido.
+ * @author Trinidad Gaete, Manuel Lillo, Alexis Ruiz.
+ */
 public class Tablero {
-    // constante
+    // Se crean las constantes de la clase.
     public final static int CAPACIDAD_POR_DEFECTO = 18;
     public final static int CANTIDAD_KROMIS = 3;
     public final static int CANTIDAD_CAGUANOS = 5;
@@ -72,6 +76,9 @@ public class Tablero {
     }
 
     // Metodos
+    /** 
+     * Se usa el metodo crearCarro para generar las 3 Kromis, 5 Caguanos y 10 Trupallas.
+     */
     public void crearCarro() {
         for (int i = 0; i < CANTIDAD_KROMIS; i++) {
             crearKromi();
@@ -84,7 +91,10 @@ public class Tablero {
         }
 
     }
-
+    /**
+     * Se crea Kromi y se posiciona de forma aleatoria dentro de la matriz
+     * y se crea un margen para que la kromi siempre quede dentro del tablero.
+     */
     public void crearKromi() {
         Carro c1;
         int fila;
@@ -118,7 +128,10 @@ public class Tablero {
         carros.add(c1);
 
     }
-
+    /**
+     * Se crea un caguano y se genera su ubicacion aleatoria dentro del tablero en una 
+     * posicion nueva para evitar que quede sobre otro vehiculo.
+     */
     public void crearCaguano() {
         Carro c1;
         int fila;
@@ -146,7 +159,10 @@ public class Tablero {
         carros.add(c1);
 
     }
-
+    /**
+     * Se crea un trupalla y se genera su ubicacion aleatoria dentro del tablero en una 
+     * posicion nueva para evitar que quede sobre otro vehiculo.
+     */
     public void crearTrupalla() {
         Carro c1;
         int fila;
@@ -167,7 +183,12 @@ public class Tablero {
         carros.add(c1);
 
     }
-
+    /**
+     * Este metodo se utiliza para restringir la entrada de caracteres no permitidos
+     * del usuario.
+     * @param entrada lee el ingreso del usuario.
+     * @return regresa un numero entero de la selecion del usuario.
+     */
     public static int pedirEntero(Scanner entrada) {
     		
     	while (!entrada.hasNextInt()) {
@@ -176,7 +197,14 @@ public class Tablero {
 		}
     	return entrada.nextInt();
 	}
-     
+     /**
+      * Este metodo se utiliza para verificar que el usuario ingrese un numero 
+      * dentro del rango establecido.
+      * @param scanner lee el ingreso del usuario.
+      * @param limiteInferior  indica el limite inferior del numero.
+      * @param limiteSuperior indica el limite superior del numero.
+      * @return regresa un numero entero de la seleccion del usuario.
+      */
     public static int pedirEntero(Scanner scanner, int limiteInferior, int limiteSuperior) {
         int entero;
         do {
@@ -188,12 +216,19 @@ public class Tablero {
         } while(entero < limiteInferior || entero > limiteSuperior);
         return entero;
     }
-    	
+    	/**
+    	 * Este metodo se utiliza para acortar la escritura del codigo.
+    	 * @param mensaje muestra un mensaje por consola.
+    	 */
     	public static void escribir (String mensaje) {
     		System.out.println(mensaje);
     	}
     
-    	
+    	/**
+    	 * Este metodo se utiliza para mostrar el tablero.
+    	 * @param completa si es true muestra la matriz completa tanto los 
+    	 * vehiculos como los lanzamientos, si es false solo muestra los lanzamientos.
+    	 */
 
     public void mostrarMatriz(boolean completa) {
     	if (completa) {
@@ -225,7 +260,11 @@ public class Tablero {
     	}
        
     }
-
+    /**
+     * Este metodo se utiliza para crear un huevo e indicarle al usuario el 
+     * limite de donde lanzar el huevo tanto de la fila como columna de la matriz.
+     * 
+     */
     public void lanzarHuevo() {
     	
     		
@@ -240,7 +279,16 @@ public class Tablero {
         lanzamientos.add(h1);
         calcularPuntaje(filaObjetivo, columnaObjetivo, h1);
     }
-    
+    /**
+     * Calcula el puntaje por cada lanzamiento, segun la posicion y asigna el puntaje
+     * segun donde cayo el lanzamiento, y pone una H en el tablero.
+     * tambien revisa si el usuario destruyo por completo el carro y le asigna 
+     * el puntaje segun que carro destruyo.
+     * @param filaObjetivo fila a la que apunto el usuario.
+     * @param columnaObjetivo columna a la que apunto el usuario.
+     * @param h1 es un objeto de la clase huevo que guarda los datos del 
+     * lanzamiento correspondiente.
+     */
     private void calcularPuntaje(int filaObjetivo, int columnaObjetivo, Huevo h1) {
     	
         if (tablero[filaObjetivo][columnaObjetivo] == null) {
@@ -302,7 +350,10 @@ public class Tablero {
             }
         }
     }
-
+    /**
+     * Suma todos los puntajes obtenidos de los lanzamientos.
+     * @return muestra la suma de los puntajes obtenidos.
+     */
     public int mostrarPuntajeTotal() {
         
         int contador = 0;
@@ -313,11 +364,15 @@ public class Tablero {
         return contador;
 
     }
-    
-   public int mostrarPuntaje(int contador) {
+    /**
+     * 
+     * @param posicion muestra el puntaje individual del lanzamiento segun su posicion.
+     * @return regresa el puntaje del lanzamiento por pantalla.
+     */
+   public int mostrarPuntaje(int posicion) {
         
 	   int puntaje;
-        puntaje = lanzamientos.get(contador).getPuntajeObtenido();     
+        puntaje = lanzamientos.get(posicion).getPuntajeObtenido();     
         return puntaje;
 
     }

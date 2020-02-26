@@ -1,7 +1,11 @@
 package cl.awakelab.pks;
 
 import cl.awakelab.funciones.RandomPksQls;
-
+/**
+ * En esta clase se definen los atributos de Caguano
+ * @author Trinidad Gaete, Manuel Lillo, Alexis Ruiz.
+ *
+ */
 public class Caguano extends Carro {
 	
 	//Atributos de la clase hija Caguano
