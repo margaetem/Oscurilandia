@@ -218,14 +218,14 @@ public class PruebasUnitarias {
 		System.out.println("ingrese la siguiente fila a continuacion:" + (t1.getCarros().get(0).getUbicacionFila()+2));
 		System.out.println("ingrese la siguiente columna a continuacion:" + t1.getCarros().get(0).getUbicacionColumna());
 		t1.lanzarHuevo();
-		// se evalua que el puntaje por darle al trupalla sea efectivamente 1.
+		// al darle a la tercera celda de la kromi el resultado debe ser 13
 		assertEquals(13, t1.getLanzamientos().get(4).getPuntajeObtenido());
 		
 		// se valida que al darle a un caguano complet asigne 10 puntos, se busca la coordenada restantes del primer caguano
 		System.out.println("ingrese la siguiente fila a continuacion:" + t1.getCarros().get(3).getUbicacionFila());
 		System.out.println("ingrese la siguiente columna a continuacion:" + (t1.getCarros().get(3).getUbicacionColumna()+1));
 		t1.lanzarHuevo();
-		// se evalua que el puntaje por darle al trupalla sea efectivamente 1.
+		// al darle a la segunda celda del caguano el resultado debe ser 9
 		assertEquals(9, t1.getLanzamientos().get(5).getPuntajeObtenido());
 	}
 
