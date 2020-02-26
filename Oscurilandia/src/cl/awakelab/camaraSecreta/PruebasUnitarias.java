@@ -226,7 +226,7 @@ public class PruebasUnitarias {
 		System.out.println("ingrese la siguiente columna a continuacion:" + (t1.getCarros().get(3).getUbicacionColumna()+1));
 		t1.lanzarHuevo();
 		// se evalua que el puntaje por darle al trupalla sea efectivamente 1.
-		assertEquals(0, t1.getLanzamientos().get(5).getPuntajeObtenido());
+		assertEquals(9, t1.getLanzamientos().get(5).getPuntajeObtenido());
 	}
 
 }
