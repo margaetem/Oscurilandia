@@ -195,18 +195,35 @@ public class Tablero {
     
     	
 
-    public void mostrarMatriz() {
-        for (int i = 0; i < tablero.length; i++) {
-            for (int j = 0; j < tablero.length; j++) {
-                if (tablero[i][j] == null) {
-                    System.out.print("[ ]");
-                } else {
-                    System.out.print("[" + tablero[i][j] + "]");
-                }
-            }
+    public void mostrarMatriz(boolean completa) {
+    	if (completa) {
+    		 for (int i = 0; i < tablero.length; i++) {
+    	            for (int j = 0; j < tablero.length; j++) {
+    	                if (tablero[i][j] == null) {
+    	                    System.out.print("[ ]");
+    	                } else {
+    	                    System.out.print("[" + tablero[i][j] + "]");
+    	                }
+    	            }
 
-            System.out.println("");
-        }
+    	            System.out.println("");
+    	        } 	
+    	} else {
+    		 for (int i = 0; i < tablero.length; i++) {
+ 	            for (int j = 0; j < tablero.length; j++) {
+ 	                if (tablero[i][j] == null) {
+ 	                    System.out.print("[ ]");
+ 	                } else if (tablero[i][j] == "H"){
+ 	                    System.out.print("[" + tablero[i][j] + "]");
+ 	                } else {
+ 	                	System.out.print("[ ]");
+ 	                }
+ 	            }
+
+ 	            System.out.println("");
+ 	        } 
+    	}
+       
     }
 
     public void lanzarHuevo() {
@@ -287,7 +304,7 @@ public class Tablero {
 //        scanner.close();
     }
 
-    public int calcularPuntaje() {
+    public int calcularPuntajeTotal() {
         
         int contador = 0;
         for (int i = 0; i < lanzamientos.size(); i++) {
@@ -295,6 +312,14 @@ public class Tablero {
             
         }
         return contador;
+
+    }
+    
+   public int calcularPuntaje(int contador) {
+        
+	   int puntaje;
+        puntaje = lanzamientos.get(contador).getPuntajeObtenido();     
+        return puntaje;
 
     }
 
