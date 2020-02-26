@@ -27,6 +27,7 @@ public class Ejecutable {
 	}
 
 	static void menu() {
+		//Para ver si funciona
 		Tablero.escribir("*** BIENVENIDO A  O S C U R I L A N D I A *** \n");
 		Tablero.escribir("¡FirstLine necesita de tu ayuda! \n");
 		Tablero.escribir("Los villanos de la Camara Secreta tienen un plan para apodarse \n"
